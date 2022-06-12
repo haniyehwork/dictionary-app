@@ -84,7 +84,9 @@
             this.audiosrc1 = response["data"][0]["phonetics"][1] ? response["data"][0]["phonetics"][1].audio : '',
             this.meanings = response["data"][0]["meanings"][0].definitions,
             this.synonyms = response["data"][0]["meanings"][0].synonyms[0],
-            this.examples = response["data"][0]["meanings"][0].definitions
+            this.examples = this.meanings.filter((example) => {
+              return example.example !== undefined
+            })
           ))
       },
     }
