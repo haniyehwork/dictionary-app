@@ -3,7 +3,6 @@
     <h1>{{title}}</h1>
     <input id="inputWord" @keyup.enter="getData" placeholder="write a word" type="text" v-model="myInput" ref="name">
     <button id="buttonWord" @click="getData">Search</button>
-    <!--<button @click="toggleModal">show modal</button>-->
     <div v-if="showModal">  
       <Maincard :wordd=wordd :partOfSpeech=partOfSpeech :audiosrc=audiosrc :phoneticc=phoneticc :synonyms=synonyms>      
       </Maincard>
@@ -15,7 +14,6 @@
 </template>
 
 <script>
-  import Modal from './components/Modal.vue'
   import axios from 'axios'
   import Maincard from './components/Maincard.vue'
   import Meanings from './components/Meanings.vue'
@@ -23,7 +21,6 @@
   export default {
     name: 'App',
     components: {
-      Modal,
       Maincard,
       Meanings,
       Examples
@@ -92,21 +89,6 @@
     color: #2c3e50;
     margin-top: 60px;
   }
-
-  .modal .actions {
-    text-align: center;
-    margin: 30px 0 10px 0;
-  }
-
-  .modal .actions a {
-    color: #333333;
-    padding: 8px;
-    border: 1px solid #eee;
-    border-radius: 4px;
-    text-decoration: none;
-    margin: 10px;
-  }
-
   #inputWord {
     top: 18%;
     left: 5%;
