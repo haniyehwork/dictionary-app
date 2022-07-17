@@ -1,16 +1,6 @@
 <template>
   <div class="card">
     <h1>{{title}}</h1>
-    <!--<div v-if="showModal">
-      <Modal @close="toggleModal">
-        <template v-slot:links>
-          <a href="#">sign up</a>
-        </template>
-        <h1>new new</h1>
-        <p>new paragraph as well</p>
-
-      </Modal>
-    </div>-->
     <input id="inputWord" @keyup.enter="getData" placeholder="write a word" type="text" v-model="myInput" ref="name">
     <button id="buttonWord" @click="getData">Search</button>
     <!--<button @click="toggleModal">show modal</button>-->
